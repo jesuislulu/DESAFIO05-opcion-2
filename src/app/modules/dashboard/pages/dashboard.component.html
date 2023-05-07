@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span appFontSize>Administrador de Alumnos</span>
+  <span class="spacer"></span>
+  <button mat-icon-button class="icon favorite-icon" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" opened>
+    <div class="dflex">
+      <button color="primary" (click)="navigate('alumns')" class="my-10" mat-raised-button>
+        Lista 
+      </button>
+      <button color="primary" [routerLink]="'courses'" class="my-10" mat-raised-button>
+        Cursos
+      </button>
+    </div>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
